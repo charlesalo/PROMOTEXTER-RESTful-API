@@ -26,10 +26,7 @@
     "@types/axios": "^0.14.0",
     "@types/jest": "^29.5.10",
     "@types/node": "^20.10.1",
-    "jest": {
-      "preset": "ts-jest",
-      "testEnvironment": "node"
-    },    
+    "jest": "^29.7.0",
     "ts-jest": "^29.1.1"
   }
 }
