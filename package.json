@@ -2,11 +2,20 @@
   "name": "promotexter-restful-api-exam",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/api.js",
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
-  "keywords": [],
+  "keywords": [
+    "RESTful API",
+    "HTTP client",
+    "axios",
+    "TypeScript"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
