@@ -40,11 +40,29 @@ By following these principles, we've created a robust and maintainable API clien
 
 ## Getting Started
 
-To use this API client, first install the necessary dependencies:
+To use this API client, you'll need to first obtain the source code and install the necessary dependencies.
 
-```npm install axios```
+### Prerequisites
 
-Then, you can import the functions from the api.ts file and use them to interact with the API:
+- Git
+- Node.js
+- npm
+
+### Installation
+
+1. Clone the repository:
+
+```git clone https://github.com/charlesalo/PROMOTEXTER-RESTful-API.git```
+
+2. Navigate to the project directory:
+```cd PROMOTEXTER-RESTful-API```
+
+3. Install the necessary npm packages:
+```npm install```
+
+Usage
+
+Once the project is set up, you can import the functions from the api.ts file and use them to interact with the API:
 
 ```
 import { createResource, getResource, updateResource, deleteResource } from './api';
