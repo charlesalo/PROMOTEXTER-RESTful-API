@@ -11,21 +11,54 @@ describe('API functions', () => {
 
   describe('createResource', () => {
     it('should send a POST request to create a new resource', async () => {
-      // Arrange
       const data = { name: 'Test Resource', value: 100 };
       const expectedResponse = { id: '123', ...data };
       mockedAxios.post.mockResolvedValue({ data: expectedResponse });
 
-      // Act
       const response = await createResource(data);
 
-      // Assert
       expect(response.data).toEqual(expectedResponse);
       expect(mockedAxios.post).toHaveBeenCalledWith(`${baseURL}resource`, data);
     });
-
-     // Additional tests for PUT, DELETE, etc. can be added here
   });
 
-  // Similarly, add describe blocks for getResource, updateResource, deleteResource
+  describe('getResource', () => {
+    it('should send a GET request to retrieve a resource', async () => {
+      const resourceId = '123';
+      const expectedResponse = { id: resourceId, name: 'Test Resource', value: 100 };
+      mockedAxios.get.mockResolvedValue({ data: expectedResponse });
+
+      const response = await getResource(resourceId);
+
+      expect(response.data).toEqual(expectedResponse);
+      expect(mockedAxios.get).toHaveBeenCalledWith(`${baseURL}resource/${resourceId}`);
+    });
+  });
+
+  describe('updateResource', () => {
+    it('should send a PUT request to update a resource', async () => {
+      const resourceId = '123';
+      const newData = { name: 'Updated Test Resource', value: 150 };
+      const expectedResponse = { ...newData };
+      mockedAxios.put.mockResolvedValue({ data: expectedResponse });
+
+      const response = await updateResource(resourceId, newData);
+
+      expect(response.data).toEqual(expectedResponse);
+      expect(mockedAxios.put).toHaveBeenCalledWith(`${baseURL}resource/${resourceId}`, newData);
+    });
+  });
+
+  describe('deleteResource', () => {
+    it('should send a DELETE request to delete a resource', async () => {
+      const resourceId = '123';
+      const expectedResponse = {};
+      mockedAxios.delete.mockResolvedValue({ data: expectedResponse });
+
+      const response = await deleteResource(resourceId);
+
+      expect(response.data).toEqual(expectedResponse);
+      expect(mockedAxios.delete).toHaveBeenCalledWith(`${baseURL}resource/${resourceId}`);
+    });
+  });
 });
