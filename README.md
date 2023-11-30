@@ -60,7 +60,7 @@ To use this API client, you'll need to first obtain the source code and install 
 3. Install the necessary npm packages:
 ```npm install```
 
-Usage
+## Usage
 
 Once the project is set up, you can import the functions from the api.ts file and use them to interact with the API:
 
